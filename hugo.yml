@@ -1,0 +1,56 @@
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+title: 'Wigmo Development'
+theme: 'PaperMod'
+
+outputs:
+  home: 
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - identifiers: about
+      name: About
+      url: /about
+      weight: 10
+    - identifiers: projects
+      name: Projects
+      url: /projects
+      weight: 20
+    - identifiers: update
+      name: Updates
+      url: /updates
+      weight: 30
+    - identifiers: stories
+      name: Stories
+      url: https://stories.wigmo.dev
+      weight: 40
+    - identifiers: journal
+      name: Journal
+      url: https://journal.wigmo.dev
+      weight: 50
+
+params: 
+  profileMode: 
+    enabled: true
+    title: 'Wigmo Development'
+    subtitle: 'I do App Development.'
+    imageUrl: '/images/johanwigmo-main.jpg'
+    imageTitle: 'Wigmo Development logo'
+    imageWidth: 240
+    imageHeight: 240
+#    buttons:
+#      - name: My Project
+#        url: '/my-project/'
+
+  socialIcons: 
+    - name: 'github'
+      url: 'https://github.com/johanwigmo'
+    - name: 'linkedin'
+      url: 'https://www.linkedin.com/in/johanwigmo/'
+
+  defaultTheme: auto
+  ShowFullTextRSS: true
+  ShowCodeCopyButton: true
