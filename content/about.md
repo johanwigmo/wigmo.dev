@@ -8,13 +8,11 @@ I share my work on [GitHub](http://github.com/johanwigmo), and you can connect w
 
 ---
 
-## About Me
-
 For over a decade, I’ve worked as an app developer. My focus has primarily been on iOS, but in recent years, I’ve expanded my skills to include Android development. This shift has broadened my understanding of app ecosystems, though I sometimes feel I’ve missed out on the latest trends in iOS.
 
-This website is my digital notepad—a _public_ space where I document ideas, share knowledge, and reflect on projects. From foundational programming concepts to snippets, features, and personal reflections, I’m slowly building a knowledge bank for myself and others.
+Over the years I've got confidence to take on most iOS projects and I've always been eager to learn when I need to. Starting to know my way around Android probably isn't hurting. I've had roles where I kept working more in the background with bugs and maintenance, to having lead responsibility and mentored junior developers. With the years working on different projects, I've learned the importance of quality and take responsibility for your work, to build like you have to maintain the projects for many years. 
 
-I believe teaching is one of the best ways to learn. Sharing knowledge not only helps others but challenges me to deeply understand the topics I discuss.
+I'm currently trying to up my iOS game further by working on hobby projects, which I showcase under [Projects](/projects). I'm also learning all the new features I've been missing out on and relearning the basics once again - documenting it on [stories.wigmo.dev](https://stories.wigmo.dev) - while also logging my journey on [journal.wigmo.dev](https://journal.wigmo.dev).
 
 ## Who I Am
 
