@@ -9,28 +9,28 @@ outputs:
     - RSS
     - JSON
 
-menu:
-  main:
-    - identifiers: about
-      name: About
-      url: /about
-      weight: 10
-    - identifiers: projects
-      name: Projects
-      url: /projects
-      weight: 20
-    - identifiers: update
-      name: Updates
-      url: /updates
-      weight: 30
-    - identifiers: stories
-      name: Stories
-      url: https://stories.wigmo.dev
-      weight: 40
-    - identifiers: journal
-      name: Journal
-      url: https://journal.wigmo.dev
-      weight: 50
+# menu:
+#   main:
+#     - identifiers: about
+#       name: About
+#      url: /about
+#      weight: 10
+#    - identifiers: projects
+#      name: Projects
+#      url: /projects
+#      weight: 20
+#    - identifiers: update
+#      name: Updates
+#      url: /updates
+#      weight: 30
+#    - identifiers: stories
+#      name: Stories
+#      url: https://stories.wigmo.dev
+#      weight: 40
+#    - identifiers: journal
+#      name: Journal
+#      url: https://journal.wigmo.dev
+#      weight: 50
 
 params: 
   profileMode: 
