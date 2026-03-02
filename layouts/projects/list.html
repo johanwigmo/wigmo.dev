@@ -1,0 +1,61 @@
+{{ define "main" }}
+  <header>
+    {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  </header>
+  {{ with .Content }}
+    <section class="prose mt-0 max-w-full dark:prose-invert">
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        {{ . | emojify }}
+      </div>
+    </section>
+  {{ end }}
+  {{ if .Data.Pages }}
+    <section class="mt-8">
+      {{ range .Pages }}
+        <article class="mt-6 flex max-w-prose flex-row">
+          {{- $images := .Resources.ByType "image" }}
+          {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
+          {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
+          {{- with $feature }}
+            <div class="flex-none pe-4 sm:pe-6">
+              <a href="{{ $.Permalink }}" aria-label="{{ $.Title | emojify }}">
+                <img
+                  alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
+                  {{ if eq .MediaType.SubType "svg" }}
+                    class="w-24 max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-40 sm:max-w-[10rem]"
+                    src="{{ .Permalink }}"
+                  {{ else }}
+                    class="w-24 rounded-md sm:w-40"
+                    srcset="{{ (.Fill "160x120 smart").Permalink }} 160w, {{ (.Fill "320x240 smart").Permalink }} 2x"
+                    src="{{ (.Fill "160x120 smart").Permalink }}" width="160" height="120"
+                  {{ end }}
+                  {{ if $.Site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
+                />
+              </a>
+            </div>
+          {{- end }}
+          <div>
+            <h3 class="flex items-center text-xl font-semibold">
+              <a class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral" href="{{ .Permalink }}">
+                {{ .Title | emojify }}
+              </a>
+            </h3>
+            {{ with .Description }}
+              <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{{ . }}</p>
+            {{ end }}
+            {{ with .Params.tech }}
+              <div class="mt-2 flex flex-wrap gap-1">
+                {{ range . }}
+                  <span class="rounded bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}
