@@ -1,0 +1,14 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Wigmo Development"
+
+[params.author]
+  name = "Johan Wigmo"
+  headline = "App Developer"
+  bio = "iOS & Android developer based in Sweden"
+  image = "images/johanwigmo-main.jpg"
+  links = [
+    { github = "https://github.com/johanwigmo" },
+    { linkedin = "https://linkedin.com/in/johanwigmo" },
+  ]

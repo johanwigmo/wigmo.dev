@@ -1,0 +1,11 @@
+baseURL = "https://wigmo.dev/"
+languageCode = "en"
+title = "Wigmo Development"
+theme = "github.com/jpanther/congo/v2"
+
+[taxonomies]
+  tag = "tags"
+  project = "project"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
