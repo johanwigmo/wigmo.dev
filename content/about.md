@@ -2,6 +2,9 @@
 title = "About"
 description = "About Johan Wigmo and Wigmo Development"
 showTableOfContents = false
+showDate = false
+showReadingTime = false
+showPagination = false
 +++
 
 Placeholder content for the About page. This will contain information about Johan Wigmo and Wigmo Development.

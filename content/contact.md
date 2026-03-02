@@ -2,6 +2,9 @@
 title = "Contact"
 description = "Get in touch with Wigmo Development"
 showTableOfContents = false
+showDate = false
+showReadingTime = false
+showPagination = false
 +++
 
 Want to get in touch? Here's how you can reach me.

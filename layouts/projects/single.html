@@ -28,33 +28,32 @@
       </div>
     </section>
 
-    {{/* Related Updates via project taxonomy */}}
+    {{/* Related Updates — find updates where .Params.project contains this project's slug */}}
     {{ $projectSlug := .File.ContentBaseName }}
-    {{ $projectTaxonomy := index site.Taxonomies.project $projectSlug }}
-    {{ with $projectTaxonomy }}
-      {{ $updates := .Pages }}
-      {{ if $updates }}
-        <section class="mt-12 max-w-prose border-t border-neutral-200 pt-8 dark:border-neutral-700">
-          <h2 class="text-2xl font-extrabold">Updates</h2>
-          <ul class="mt-4 space-y-3">
-            {{ range first 10 $updates }}
-              <li class="flex items-baseline justify-between gap-4">
-                <a href="{{ .Permalink }}" class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-                  {{ .Title | emojify }}
-                </a>
-                <time class="shrink-0 text-sm text-neutral-500 dark:text-neutral-400">
-                  {{ .Date.Format "Jan 2, 2006" }}
-                </time>
-              </li>
-            {{ end }}
-          </ul>
-          {{ if gt (len $updates) 10 }}
-            <p class="mt-4 text-sm">
-              <a href="/project/{{ $projectSlug }}/" class="text-primary-600 hover:underline dark:text-primary-400">View all updates &rarr;</a>
-            </p>
-          {{ end }}
-        </section>
+    {{ $allUpdates := where site.RegularPages "Section" "updates" }}
+    {{ $relatedUpdates := slice }}
+    {{ range $allUpdates }}
+      {{ $projects := .Params.project | default slice }}
+      {{ if in $projects $projectSlug }}
+        {{ $relatedUpdates = $relatedUpdates | append . }}
       {{ end }}
+    {{ end }}
+    {{ with $relatedUpdates }}
+      <section class="mt-12 max-w-prose border-t border-neutral-200 pt-8 dark:border-neutral-700">
+        <h2 class="text-2xl font-extrabold">Updates</h2>
+        <ul class="mt-4 space-y-3">
+          {{ range first 10 . }}
+            <li class="flex items-baseline justify-between gap-4">
+              <a href="{{ .Permalink }}" class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+                {{ .Title | emojify }}
+              </a>
+              <time class="shrink-0 text-sm text-neutral-500 dark:text-neutral-400">
+                {{ .Date.Format "Jan 2, 2006" }}
+              </time>
+            </li>
+          {{ end }}
+        </ul>
+      </section>
     {{ end }}
 
     <footer class="max-w-prose pt-8 print:hidden">

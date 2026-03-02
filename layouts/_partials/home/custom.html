@@ -10,8 +10,8 @@
 {{/* Featured Projects */}}
 {{ $featured := where (where site.RegularPages "Section" "projects") ".Params.featured" true }}
 {{ with $featured }}
-  <section class="mt-12">
-    <h2 class="text-2xl font-extrabold">Projects</h2>
+  <section>
+    <h2 class="mt-8 text-2xl font-extrabold">Projects</h2>
     <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {{ range sort . "Params.weight" }}
         <a href="{{ .Permalink }}" class="group block rounded-lg border border-neutral-200 p-5 transition-colors hover:border-primary-500 dark:border-neutral-700 dark:hover:border-primary-400">
@@ -38,6 +38,6 @@
 {{ end }}
 
 {{/* Recent Updates (using Congo's built-in partial) */}}
-<section class="mt-12">
+<section>
   {{ partial "recent-articles.html" . }}
 </section>
