@@ -1,0 +1,16 @@
+.home-section {
+  margin-top: 4rem;
+}
+
+.home-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .home-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

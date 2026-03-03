@@ -1,34 +1,44 @@
-{{/* Homepage: intro + featured projects + recent updates */}}
+{{/* Homepage: header + featured projects + recent updates */}}
+
+{{/* Header */}}
+<header class="mt-8">
+  <h1 class="text-4xl font-extrabold">{{ site.Title }}</h1>
+  {{ with site.Language.Params.Author.headline }}
+    <h2 class="mt-1 text-xl text-neutral-500 dark:text-neutral-400">{{ . | markdownify | emojify }}</h2>
+  {{ end }}
+</header>
 
 {{/* Intro content from _index.md */}}
 {{ with .Content }}
-  <article class="prose max-w-full dark:prose-invert">
-    <section>{{ . | emojify }}</section>
-  </article>
+  <section class="prose mt-6 max-w-full dark:prose-invert">
+    {{ . | emojify }}
+  </section>
 {{ end }}
 
 {{/* Featured Projects */}}
 {{ $featured := where (where site.RegularPages "Section" "projects") ".Params.featured" true }}
 {{ with $featured }}
-  <section>
-    <h2 class="mt-8 text-2xl font-extrabold">Projects</h2>
-    {{ range sort . "Params.weight" }}
-      <a href="{{ .Permalink }}" class="mt-6 block">
-        <h3 class="text-xl font-semibold text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-          {{ .Title | emojify }}
-        </h3>
-        {{ with .Description }}
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{{ . }}</p>
-        {{ end }}
-      </a>
-    {{ end }}
+  <section class="home-section">
+    <h2 class="text-2xl font-extrabold">Projects</h2>
+    <div class="home-projects-grid">
+      {{ range sort . "Params.weight" }}
+        <a href="{{ .Permalink }}" class="block">
+          <h3 class="text-xl font-semibold text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+            {{ .Title | emojify }}
+          </h3>
+          {{ with .Description }}
+            <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{{ . }}</p>
+          {{ end }}
+        </a>
+      {{ end }}
+    </div>
     <p class="mt-6 text-sm">
       <a href="/projects/" class="text-primary-600 hover:underline dark:text-primary-400">View all projects &rarr;</a>
     </p>
   </section>
 {{ end }}
 
-{{/* Recent Updates (using Congo's built-in partial) */}}
-<section>
+{{/* Recent Updates */}}
+<section class="home-section">
   {{ partial "recent-articles.html" . }}
 </section>
