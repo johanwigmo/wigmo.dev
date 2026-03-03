@@ -14,3 +14,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.tech-tags {
+  gap: 0.375rem;
+}
