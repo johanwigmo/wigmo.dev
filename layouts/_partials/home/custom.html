@@ -1,9 +1,11 @@
 {{/* Homepage: header + featured projects + recent updates */}}
 
-{{/* Header */}}
+{{/* Header — title and subtitle from _index.md front matter */}}
 <header class="mt-8">
-  <h1 class="text-4xl font-extrabold">{{ site.Title }}</h1>
-  {{ with site.Language.Params.Author.headline }}
+  {{ with .Title }}
+    <h1 class="text-4xl font-extrabold">{{ . | emojify }}</h1>
+  {{ end }}
+  {{ with .Params.subtitle }}
     <h2 class="mt-1 text-xl text-neutral-500 dark:text-neutral-400">{{ . | markdownify | emojify }}</h2>
   {{ end }}
 </header>
