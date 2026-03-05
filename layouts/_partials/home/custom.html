@@ -1,8 +1,8 @@
 {{/* Homepage: header + featured projects + recent updates */}}
 
-{{/* Header — title and subtitle from _index.md front matter */}}
+{{/* Header — heading and subtitle from _index.md front matter, title used for SEO */}}
 <header class="mt-8">
-  {{ with .Title }}
+  {{ with .Params.heading | default .Title }}
     <h1 class="text-4xl font-extrabold">{{ . | emojify }}</h1>
   {{ end }}
   {{ with .Params.subtitle }}
