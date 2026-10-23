@@ -19,3 +19,26 @@
   gap: 0.375rem;
   margin-top: 0.75rem;
 }
+
+/* Light-mode code blocks: warm Gruvbox ink goes soft at thin mono sizes.
+   Hold the code window to full ink and darken the accent tokens, mirroring
+   how upstream Gruvbox darkens its accents for light backgrounds. Dark-mode
+   values are restated so the light overrides don't leak into `.dark`. */
+.chroma {
+  color: rgba(var(--color-neutral-900), 1); /* was neutral-700 (58,54,47) → 13:1 */
+}
+.chroma .gh {
+  color: rgba(var(--color-neutral-700), 1); /* was neutral-500 (95,89,79) → 10:1 */
+}
+.chroma .k {
+  color: rgba(var(--color-primary-700), 1); /* was primary-600 ember 3.8:1 → 4.9:1 */
+}
+.dark .chroma {
+  color: rgba(var(--color-neutral-200), 1);
+}
+.dark .chroma .gh {
+  color: rgba(var(--color-neutral-500), 1);
+}
+.dark .chroma .k {
+  color: rgba(var(--color-primary-300), 1);
+}

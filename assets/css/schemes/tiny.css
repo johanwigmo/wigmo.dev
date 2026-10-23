@@ -1,0 +1,56 @@
+/* Tiny scheme — ported from DesignTokens.TinyTheme (Gruvbox-family house style).
+ *
+ * Congo pairs one ramp with both appearances: light mode reads the pale end
+ * (50–500) for surfaces and the dark end (600–900) for text, dark mode the
+ * reverse. Every stop below is tuned for the slot Congo actually uses it in:
+ *
+ *   light  body: bg = base, text = 900   dark  body: bg = 800, text = base
+ *   light  prose: body = 700, muted = 500, headings = 800
+ *   dark   prose: body = 300, muted = 400/500, headings = 50
+ *   light  code: bg = 50, text = 700     dark  code: bg = 700, text = 200
+ *   accents: light = 600/700, dark = 300/400
+ */
+
+/* Paper — warm cream in light (F7F5EF), warm near-black in dark (141310) */
+:root {
+  --color-neutral: 247, 245, 239;
+  /* Pale end: light surfaces, dark-mode text */
+  --color-neutral-50: 238, 235, 226;   /* surface EEEBE2 — light code bg */
+  --color-neutral-100: 229, 225, 215;
+  --color-neutral-200: 220, 214, 202;  /* light hr/copy chip, dark code text */
+  --color-neutral-300: 204, 197, 184;  /* light borders, dark prose body */
+  --color-neutral-400: 181, 176, 166;  /* B5B0A6 — dark labelSecondary */
+  /* Ink end: light-mode text, dark surfaces */
+  --color-neutral-500: 95, 89, 79;     /* 5F594F — light labelSecondary */
+  --color-neutral-600: 74, 68, 59;     /* dark borders, light line numbers */
+  --color-neutral-700: 58, 54, 47;     /* light prose body, dark code bg */
+  --color-neutral-800: 20, 19, 16;     /* 141310 — dark page bg */
+  --color-neutral-900: 44, 42, 38;     /* 2C2A26 — light ink (body text) */
+  --color-neutral-950: 12, 11, 9;
+
+  /* Ember — Gruvbox orange pulled toward UI-muted (B85C38 light / D98B5F dark) */
+  --color-primary-50: 252, 245, 240;
+  --color-primary-100: 249, 238, 230;  /* copy hover + chroma highlight, light */
+  --color-primary-200: 244, 229, 219;  /* skip link + quote borders, light */
+  --color-primary-300: 226, 158, 122;  /* dark chroma keywords */
+  --color-primary-400: 217, 139, 95;   /* D98B5F — dark accents */
+  --color-primary-500: 201, 116, 76;   /* title underlines, both modes */
+  --color-primary-600: 184, 92, 56;    /* B85C38 — light accents */
+  --color-primary-700: 163, 76, 42;    /* light prose links + tech chips */
+  --color-primary-800: 134, 58, 32;    /* light chroma strings */
+  --color-primary-900: 89, 46, 27;     /* chroma highlight + quote borders, dark */
+  --color-primary-950: 44, 22, 13;
+
+  /* Warm gray-brown (7A6A58 light / A89A88 dark) — chroma tokens + inline code */
+  --color-secondary-50: 240, 236, 229;
+  --color-secondary-100: 224, 217, 207;
+  --color-secondary-200: 203, 191, 176; /* dark chroma names */
+  --color-secondary-300: 184, 171, 154; /* dark chroma attributes */
+  --color-secondary-400: 145, 129, 110; /* light chroma constants, dark inline code */
+  --color-secondary-500: 168, 154, 136; /* A89A88 — dark chroma constants/escapes */
+  --color-secondary-600: 124, 110, 93;  /* light functions, dark types */
+  --color-secondary-700: 103, 91, 76;   /* light inline code */
+  --color-secondary-800: 84, 73, 60;    /* light chroma attributes */
+  --color-secondary-900: 66, 57, 46;    /* light chroma names */
+  --color-secondary-950: 40, 34, 27;
+}

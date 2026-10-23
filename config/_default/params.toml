@@ -1,6 +1,7 @@
-colorScheme = "congo"
+colorScheme = "tiny"
 defaultAppearance = "light"
 autoSwitchAppearance = true
+defaultThemeColor = "#F7F5EF"
 
 enableSearch = true
 enableCodeCopy = true
